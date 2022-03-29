@@ -1,12 +1,12 @@
 import calculator
 import pytest
 
-@pytest.mark.skip #command to skip the particular test case
+# @pytest.mark.skip #command to skip the particular test case
 @pytest.mark.xfail #command for expected error lines
 @pytest.mark.parametrize("a,b,c",[(3,2,5),(4,2,6),(5,5,10),(5,5,9)])
 def test_add(a,b,c):
     r=calculator.add(a,b)
-    assert r == c
+    assert not r == c
 
 @pytest.mark.xfail
 @pytest.mark.parametrize("a,b,c",[(3,2,1),(4,2,2),(5,5,0),(5,5,9)])
